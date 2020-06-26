@@ -8,6 +8,7 @@ gp=tf(num,den);                 %Função de transferencia
 ftz=c2d(gp,T_a, 'zoh');           %Planta Discreta
 
 [num,den] = tfdata(ftz, 'v')         %num e den discreto
+sys = filt(num,den, T_a);
 A = den;
 B = num;
 
