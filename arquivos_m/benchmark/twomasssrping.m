@@ -92,8 +92,9 @@ z = ep;
 [numd,dend]=ord2(wn,z);
 
 gpd = tf(numd,dend);
-ftzd= c2d(gpd,Ta, 'zoh');           %Planta Discreta
-sysd = filt(numd,dend, Ta);
+ftzd = c2d(gpd,Ta, 'zoh');           %Planta Discreta
+[numdd, dendd] = tfdata(ftzd, 'v');
+sysd = filt(numdd,dendd, Ta);
 tfd = set(sysd, 'variable', 'z^-1'); %Função de Transferência em TD
 
 %Coeficientes do polinomio desejado de acordo 
