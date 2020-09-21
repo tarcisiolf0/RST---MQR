@@ -106,8 +106,8 @@ z = ep;
 [numd,dend]= ord2(wn,z);
 
 gpd = tf(numd,dend);
-figure
-step(gpd);
+% figure
+% step(gpd);
 ftzd = c2d(gpd,Ta, 'zoh');           %Planta Discreta
 [numdd, dendd] = tfdata(ftzd, 'v');
 sysd = filt(numdd,dendd, Ta);
@@ -130,14 +130,27 @@ polo1 = raizesdesejadas(1);
 polo2 = raizesdesejadas(2);
 polo3 = 5*real(polo1);
 RPMF = poly([polo1 polo2 polo3]);
-PMF = tf(1,RPMF);
+k1 = 6.68;
+PMF = tf(k1,RPMF);
 PMFD = c2d(PMF, Ta, 'zoh');
 [NUMPMFD, DENPMFD] = tfdata(PMFD, 'v');
+
+figure
+t1=0:0.01:5;
+step(gpd,t1);
+hold on
+step(PMF,t1);
+xlabel('Tempo');
+ylabel('Amplitude');
+title('Comparação das 2 Repostas');
+legend('Sistema 2ª Ordem Desejado', 'Sistema de 3ª Ordem');
+grid on
+hold off
 
 %Coeficientes do polinomio desejado 
 % Am=[1 p1 p2 0];
 % Am=[1 (p1+p3) (p2+p1*p3) (p2*p3)];
-% Am = [1 DENPMFD(2) DENPMFD(3) DENPMFD(4)];
+Am = [1 DENPMFD(2) DENPMFD(3) DENPMFD(4)];
 M = [1 0 0 0;
     A(2) 1 B(2) 0;
     A(3) A(2) B(3) B(2);
@@ -145,7 +158,7 @@ M = [1 0 0 0;
 
 % p = [1; p1; p2; 0];
 % p = [1; (p1+p3); (p2+p1*p3); (p2*p3)];
-% p = [1; DENPMFD(2); DENPMFD(3); DENPMFD(4)];
+p = [1; DENPMFD(2); DENPMFD(3); DENPMFD(4)];
 X=inv(M)*p;
 
 %Polinomio R e S
