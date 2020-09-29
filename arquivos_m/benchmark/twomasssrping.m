@@ -94,7 +94,7 @@ Ns = Nb +d -1;
 %Condições do polinômio P(z^-1)
 %0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
-Ts = 5;                     %Tempo de estabelecimento desejado malha fechada
+Ts = 1;                     %Tempo de estabelecimento desejado malha fechada
 ep = 0.9;                            %Epsilon (Coeficiente de amortecimento)
 %tp=3;                             % Tempo de pico desejado
 %wn=pi/(tp * sqrt(1 - zeta^2));    % Frequencia Natural
@@ -150,7 +150,7 @@ p3=-exp(-ep*wn*Ta);
 % 4 Multiplicação do polo auxiliar pelos polos desejados
 % p3 = -1,3333; Multiplicando por 5, p3 = -6,66667
 nump3 = 1;
-denp3 = [1 6.667];
+denp3 = [1 13.333];
 
 tf3 = tf(nump3, denp3);
 tfd3 = c2d(tf3, Ta, 'zoh');
@@ -185,3 +185,5 @@ denhcl1 = conv(A,S);
 denhcl2 = conv(B,R);
 numHCL = (T*B);
 denHCL = (denhcl1+denhcl2);
+
+tc = 1;

@@ -73,3 +73,4 @@ S = [X(3) X(4)];
 %Polinomio T
 T=sum(Am)/sum(B);
 
+tc = 1;
