@@ -92,9 +92,9 @@ Nr = Na - 1;
 Ns = Nb +d -1;
 
 %Condições do polinômio P(z^-1)
-%0.25 <= w0Ts <= 1.5 ; 0.7 <= zeta <= 1
+%0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
-Ts = 3;                     %Tempo de estabelecimento desejado malha fechada
+Ts = 5;                     %Tempo de estabelecimento desejado malha fechada
 ep = 0.9;                            %Epsilon (Coeficiente de amortecimento)
 %tp=3;                             % Tempo de pico desejado
 %wn=pi/(tp * sqrt(1 - zeta^2));    % Frequencia Natural

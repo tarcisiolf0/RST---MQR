@@ -22,7 +22,7 @@ Nr = Na - 1;
 Ns = Nb + d -1;
 
 %Condições do polinômio P(z^-1)
-%0.25 <= w0Ts <= 1.5 ; 0.7 <= zeta <= 1
+%0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
 Ts=1;                     %Tempo de estabelecimento desejado malha fechada
 ep=0.6;                            %Epsilon (Coeficiente de amortecimento)
