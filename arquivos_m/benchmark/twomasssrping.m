@@ -67,19 +67,6 @@ ftz=c2d(gs2,Ta, 'zoh');          %Planta Discreta
 sys = filt(num,den, Ta);
 sys_d = set(sys, 'variable', 'z^-1'); %Função de Transferência em TD
 
-Atc = den;
-Btc = num;
-
-% Sistema com 1 Massa
-% num = 1;
-% den = [1 1 1];
-% Gs2 = tf(num, den);
-% Ta = 0.1;
-% ftz=c2d(gs2,Ta, 'zoh');          %Planta Discreta
-
-[num,den] = tfdata(ftz, 'v');         %num e den discreto
-sys = filt(num,den, Ta);
-sys_d = set(sys, 'variable', 'z^-1'); %Função de Transferência em TD
 
 A = den;
 B = num;
