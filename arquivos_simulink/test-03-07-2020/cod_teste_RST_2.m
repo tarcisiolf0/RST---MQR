@@ -25,7 +25,7 @@ Ns = Nb + d -1;
 %0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
 Ts=1;                     %Tempo de estabelecimento desejado malha fechada
-ep=0.6;                            %Epsilon (Coeficiente de amortecimento)
+ep=0.7;                            %Epsilon (Coeficiente de amortecimento)
 wn=4/(ep*Ts);                      %Frequencia natural do sistema
 Mp = exp((-ep*pi)/sqrt(1 - ep^2)); %Overshoot 
 
@@ -35,7 +35,8 @@ z = ep;
 
 gpd = tf(numd,dend);
 ftzd= c2d(gpd,Ta, 'zoh');           %Planta Discreta
-sysd = filt(numd,dend, Ta);
+[Bmd, Amd] = tfdata(ftzd, 'v');
+sysd = filt(Bmd,Amd, Ta);
 tfd = set(sysd, 'variable', 'z^-1'); %Função de Transferência em TD
 
 %Polos conjugados
@@ -74,3 +75,8 @@ S = [X(3) X(4)];
 T=sum(Am)/sum(B);
 
 tc = 1;
+
+denhcl1 = conv(A,S);
+denhcl2 = conv(B,R);
+numHCL = (T*B);
+denHCL = (denhcl1+denhcl2);
