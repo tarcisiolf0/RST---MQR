@@ -161,8 +161,8 @@ p = [1; (p3t+p1); (p2+(p1*p3t)); (p2*p3t)];
 X=inv(M)*p;
 
 %Polinomio R e S
-R = [X(1) X(2)];
-S = [X(3) X(4)];
+S = [X(1) X(2)];
+R = [X(3) X(4)];
 
 % S = [X(3) (X(4) - X(3)) -X(4)];
 %Polinomio T
