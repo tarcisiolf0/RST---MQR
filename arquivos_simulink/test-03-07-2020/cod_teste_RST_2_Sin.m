@@ -15,13 +15,20 @@ M1=1; M2=1;
 fv1=1; fv2=1; fv3=1;
 K1=1; K2=1; K3=1;
 
-delta = [((M1*s^2)+(fv1 + fv3)*s + (K1+K2)) -(fv3*s + K2);
-         -(fv3*s + K2)  ((M2*s^2)+(fv2 + fv3)*s + (K2+K3))];  
+% delta = [((M1*s^2)+(fv1 + fv3)*s + (K1+K2)) -(fv3*s + K2);
+%          -(fv3*s + K2)  ((M2*s^2)+(fv2 + fv3)*s + (K2+K3))];  
      
-d = det(delta);
+a = [M1 (fv1 + fv3) (K1+K2)];
+b = [0 -fv3 -K2];
+c = [0 -fv3 -K2];
+d = [M2 (fv2 + fv3) (K2+K3)];
+
+delta1 = conv(a, d);
+delta2 = -conv(c, b);
+d = delta1 + delta2;
 
 num4 = [fv3 K2];
-den4 = [1 4 7 6 3];
+den4 = d;
 
 % k = 3;
 gs4 = tf(num4, den4);
