@@ -123,23 +123,23 @@ R = [X(3) X(4)];
 
 %Polinomio T
 
-X1 = [1 -1 0];
+% X1 = [1 -1 0];
 
-M1 = [X1(1) 0     B(1)    0
-      X1(2) X1(1) B(2)   B(1)
-      X1(3) X1(2) B(3)   B(2)
-      0     X1(3) 0      B(3)];
-  
-X3 = inv(M1)*p;
+% M1 = [X1(1) 0     B(1)    0
+%       X1(2) X1(1) B(2)   B(1)
+%       X1(3) X1(2) B(3)   B(2)
+%       0     X1(3) 0      B(3)];
+%   
+% X3 = inv(M1)*p;
 
-L = [X3(1) X3(2)];
-T = [X3(3) X3(4)];
-tc = 5;
+% L = [X3(1) X3(2)];
+% T = [X3(3) X3(4)];
+% tc = 5;
 
 T=sum(Am)/sum(B);
-
-denhcl1 = conv(A,S);
-denhcl2 = conv(B,R);
-numHCL = (X3(3)*B);
-denHCL = (denhcl1+denhcl2);
+% 
+% denhcl1 = conv(A,S);
+% denhcl2 = conv(B,R);
+% numHCL = (X3(3)*B);
+% denHCL = (denhcl1+denhcl2);
 

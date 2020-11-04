@@ -5,9 +5,9 @@ clear;
 % K1 = K2 = K3 = 1 N/m
 % fv1 = fv2 = fv3 = 1 Ns/m
 % M1 = M2 = 1Kg = 1 Ns^2/m
-img2 = imread('nise_two_mass_figure.png');
-figure('Name', 'Sistema Massa Mola Nise')
-imshow(img2);
+%img2 = imread('nise_two_mass_figure.png');
+%figure('Name', 'Sistema Massa Mola Nise')
+%imshow(img2);
 
 % Função de Transferênica Gs = X2(s)/F(s)
 syms s
