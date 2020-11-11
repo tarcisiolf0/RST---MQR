@@ -25,7 +25,7 @@ Ns = Nb + d -1;
 %0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
 Ts=1;                     %Tempo de estabelecimento desejado malha fechada
-ep=0.6;                            %Epsilon (Coeficiente de amortecimento)
+ep=0.9;                            %Epsilon (Coeficiente de amortecimento)
 wn=4/(ep*Ts);                      %Frequencia natural do sistema
 Mp = exp((-ep*pi)/sqrt(1 - ep^2)); %Overshoot 
 

@@ -123,10 +123,9 @@ X=inv(M)*p;
 S = [X(1) X(2)];
 R = [X(3) X(4)];
 
-%Polinomio T 2ª Equação Diofantina Entrada Senoide
-% Tas = 0.1;
-% w0 = 1;
-% X1 = [1 -2*cos(w0*Tas) 1 0];
+%Polinomio T 2ª Equação Diofantina Entrada Degrau
+
+% X1 = [1 -1 0 0];
 % 
 % M1 = [X1(1) 0     B(1)    0
 %       X1(2) X1(1) B(2)   B(1)
