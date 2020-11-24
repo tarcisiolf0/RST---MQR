@@ -61,6 +61,7 @@ S = [X(1) X(2)];
 R = [X(3) X(4)];
 
 %Polinomio T 2ª Equação Diofantina Entrada Senoide
+% Xsin = 1 -2cos(w0*Tas)*z^-1 + z^-2
 Tas = 0.1;
 w0 = 1;
 X1 = [1 -2*cos(w0*Tas) 1 0];
@@ -75,9 +76,7 @@ X3 = inv(M1)*p;
 L = [X3(1) X3(2)];
 T = [X3(3) X3(4)];
 
-tc = 10;
-
-%T=sum(Am)/sum(B);
+tc = 55;
 
 denhcl1 = conv(A,S);
 denhcl2 = conv(B,R);
