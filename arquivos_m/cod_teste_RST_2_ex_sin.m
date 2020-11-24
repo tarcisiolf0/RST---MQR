@@ -49,10 +49,10 @@ p2=exp(-2*ep*wn*Ta);
 %Coeficientes do polinomio desejado 
 Am=[1 p1 p2 0];
 p = [1;p1;p2;0];
-M = [1 0 0 0;
-    A(2) 1 B(2) 0;
-    A(3) A(2) B(3) B(2);
-    0 A(3) 0 B(3)];
+M = [1      0      0       0;
+    A(2)    1      B(2)    0;
+    A(3)    A(2)   B(3)    B(2);
+    0       A(3)   0       B(3)];
 
 X=inv(M)*p;
 

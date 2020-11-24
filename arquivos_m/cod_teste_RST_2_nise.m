@@ -67,7 +67,7 @@ hold off
 
 %% Controlador RST
 
-Ta = 0.1;
+Ta = 0.01;
 ftz=c2d(gs2,Ta, 'zoh');          %Planta Discreta
 
 [num,den] = tfdata(ftz, 'v');         %num e den discreto
@@ -88,7 +88,7 @@ Ns = Nb +d -1;
 %0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
 Ts = 1;                     %Tempo de estabelecimento desejado malha fechada
-ep = 0.9;                            %Epsilon (Coeficiente de amortecimento)
+ep = 0.7;                            %Epsilon (Coeficiente de amortecimento)
 %tp=3;                             % Tempo de pico desejado
 %wn=pi/(tp * sqrt(1 - zeta^2));    % Frequencia Natural
 wn = 4/(ep*Ts);
@@ -112,10 +112,10 @@ p2=exp(-2*ep*wn*Ta);
 %Coeficientes do polinomio desejado 
 Am=[1 p1 p2 0];
 p = [1;p1;p2;0];
-M = [1 0 0 0;
-    A(2) 1 B(2) 0;
-    A(3) A(2) B(3) B(2);
-    0 A(3) 0 B(3)];
+M = [1      0       0       0;
+    A(2)    1       B(2)    0;
+    A(3)    A(2)    B(3)    B(2);
+    0       A(3)    0       B(3)];
 
 X=inv(M)*p;
 
