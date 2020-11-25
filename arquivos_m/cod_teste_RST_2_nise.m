@@ -124,22 +124,22 @@ S = [X(1) X(2)];
 R = [X(3) X(4)];
 
 %Polinomio T 2ª Equação Diofantina Entrada Degrau
+% Xdeg = 1 - z^-1
+X1 = [1 -1 0 0];
 
-% X1 = [1 -1 0 0];
-% 
-% M1 = [X1(1) 0     B(1)    0
-%       X1(2) X1(1) B(2)   B(1)
-%       X1(3) X1(2) B(3)   B(2)
-%       X1(4) X1(3) 0      B(3)];
-%   
-% X3 = inv(M1)*p;
-% 
-% L = [X3(1) X3(2)];
-% T = [X3(3) X3(4)];
+M1 = [X1(1) 0     B(1)    0
+      X1(2) X1(1) B(2)   B(1)
+      X1(3) X1(2) B(3)   B(2)
+      X1(4) X1(3) 0      B(3)];
+  
+X3 = inv(M1)*p;
 
-tc = 100;
+L = [X3(1) X3(2)];
+T = [X3(3) X3(4)];
 
-T=sum(Am)/sum(B);
+tc = 55;
+w0 = 1;
+Tas = 1;
 
 % denhcl1 = conv(A,S);
 % denhcl2 = conv(B,R);

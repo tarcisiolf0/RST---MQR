@@ -63,7 +63,6 @@ R = [X(3) X(4)];
 
 %Polinomio T 2ª Equação Diofantina Entrada Degrau
 % Xdeg = 1 - z^-1
-
 X1 = [1 -1 0 0];
 
 M1 = [X1(1) 0     B(1)    0
@@ -80,7 +79,7 @@ tc = 55;
 w0 = 1;
 Tas = 1;
 
-denhcl1 = conv(A,S);
-denhcl2 = conv(B,R);
-% numHCL = (T.*B);
-denHCL = (denhcl1+denhcl2);
+% denhcl1 = conv(A,S);
+% denhcl2 = conv(B,R);
+% numHCL = (T*B);
+% denHCL = (denhcl1+denhcl2);

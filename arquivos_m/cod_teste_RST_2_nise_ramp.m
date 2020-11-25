@@ -67,7 +67,7 @@ hold off
 
 %% Controlador RST
 
-Ta = 0.1;
+Ta = 0.01;
 ftz=c2d(gs2,Ta, 'zoh');          %Planta Discreta
 
 [num,den] = tfdata(ftz, 'v');         %num e den discreto
@@ -87,8 +87,8 @@ Ns = Nb +d -1;
 %Condições do polinômio P(z^-1)
 %0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
-Ts = 0.1;                     %Tempo de estabelecimento desejado malha fechada
-ep = 0.9;                            %Epsilon (Coeficiente de amortecimento)
+Ts = 1;                     %Tempo de estabelecimento desejado malha fechada
+ep = 0.7;                            %Epsilon (Coeficiente de amortecimento)
 %tp=3;                             % Tempo de pico desejado
 %wn=pi/(tp * sqrt(1 - zeta^2));    % Frequencia Natural
 wn = 4/(ep*Ts);
@@ -123,10 +123,9 @@ X=inv(M)*p;
 S = [X(1) X(2)];
 R = [X(3) X(4)];
 
-%Polinomio T 2ª Equação Diofantina Entrada Senoide
-Tas = 0.1;
-w0 = 1;
-X1 = [1 -2*cos(w0*Tas) 1 0];
+%Polinomio T 2ª Equação Diofantina Entrada Rampa
+% Xramp = (1 - z^-1)^2 = 1 -2z^-1 + z^-2
+X1 = [1 -2 1 0];
 
 M1 = [X1(1) 0     B(1)    0
       X1(2) X1(1) B(2)   B(1)
@@ -139,11 +138,10 @@ L = [X3(1) X3(2)];
 T = [X3(3) X3(4)];
 
 tc = 55;
+w0 = 1;
+Tas = 1;
 
-%T=sum(Am)/sum(B);
-
-denhcl1 = conv(A,S);
-denhcl2 = conv(B,R);
-numHCL = (X3(3)*B);
-denHCL = (denhcl1+denhcl2);
-
+% denhcl1 = conv(A,S);
+% denhcl2 = conv(B,R);
+% numHCL = (X3(3)*B);
+% denHCL = (denhcl1+denhcl2);
