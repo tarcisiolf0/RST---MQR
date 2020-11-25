@@ -79,6 +79,7 @@ T = [X3(3) X3(4)];
 tc = 55;
 w0 = 1;
 Tas = 1;
+
 denhcl1 = conv(A,S);
 denhcl2 = conv(B,R);
 numHCL = (X3(3)*B);
