@@ -1,5 +1,6 @@
-clear
 clc
+close all
+clear
 %% Planta
 Ta=0.1;                         %Tempo de amostra
 num=1;                          %Numerador Continuo
@@ -83,3 +84,27 @@ Tas = 1;
 % denhcl2 = conv(B,R);
 % numHCL = (T*B);
 % denHCL = (denhcl1+denhcl2);
+
+% figure('Name','Resposta à PRBS');
+% xlabel('Instante de Amostragem');
+% ylabel('Amplitude');
+% title('Saída x Referência');
+% legend('Referência', 'Saída');
+% grid on
+% 
+% time = ScopeData1.time;
+% r = ScopeData1.signals(1).values;
+% y = ScopeData1.signals(2).values;
+% 
+% plot(time, r);
+% hold on
+% plot(time, y);
+
+
+figure('Name','Resposta ao Degrau');
+xlabel('Tempo');
+ylabel('Amplitude');
+title('Resposta ao Degrau');
+legend('Saída');
+grid on
+step(gp)
