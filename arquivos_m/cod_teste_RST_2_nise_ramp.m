@@ -67,7 +67,7 @@ hold off
 
 %% Controlador RST
 
-Ta = 0.01;
+Ta = 0.1;
 ftz=c2d(gs2,Ta, 'zoh');          %Planta Discreta
 
 [num,den] = tfdata(ftz, 'v');         %num e den discreto
@@ -131,7 +131,7 @@ M1 = [X1(1) 0     B(1)    0
       X1(2) X1(1) B(2)   B(1)
       X1(3) X1(2) B(3)   B(2)
       X1(4) X1(3) 0      B(3)];
-  
+ 
 X3 = inv(M1)*p;
 
 L = [X3(1) X3(2)];

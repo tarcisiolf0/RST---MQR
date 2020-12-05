@@ -34,12 +34,11 @@ den4 = d;
 gs4 = tf(num4, den4);
 %% Aproximando o Sistema para um modelo de 2ª Ordem (Modelagen Nise)
 
-% Mp = 24.2, ts = 8.55s, tr = 1.47
+% MP = 24.2, ts = 8.55s, tr =1.47
 % Fator de Amortecimento - zeta
 % zeta = -log(Mp)/sqrt(pi^2 + log(Mp)^2);
 % tp = pi/(wn * sqrt(1 - zeta^2))
 mp = 0.242;
-ts = 8.55;
 tp = 3.62;
 
 zeta = -log(mp)/sqrt(pi^2 + log(mp)^2);
@@ -53,7 +52,7 @@ k = 1/3;
 gs2 = tf(k*num2, den2);
 
 figure('Name','Resposta ao Degrau - Sistema Massa Mola Nise');
-t=0:0.01:15;
+t=0:0.01:50;
 step(gs4, t);
 hold on
 step(gs2, t);
@@ -67,7 +66,7 @@ hold off
 
 %% Controlador RST
 
-Ta = 0.01;
+Ta = 0.1;
 ftz=c2d(gs2,Ta, 'zoh');          %Planta Discreta
 
 [num,den] = tfdata(ftz, 'v');         %num e den discreto
