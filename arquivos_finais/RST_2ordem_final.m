@@ -43,3 +43,5 @@ initial_theta = [-0.4 -0.4 0.005 0.10];
 w0 = 1;
 Tas = Ta;
 theta_switch_time = 10*Ta;
+
+step(gp)

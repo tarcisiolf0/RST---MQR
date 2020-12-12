@@ -45,7 +45,7 @@ step(gs4)
 hold on
 step(ftz)
 
-% initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
+%initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
 
 initial_theta = [-0.200 0.0200 0.3000 0.1700 0.0200 0.3000 0.1000 -0.1200];
 w0 = 1;
