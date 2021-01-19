@@ -41,9 +41,9 @@ ftz=c2d(gs4,Ta, 'zoh');          %Planta Discreta
 sys = filt(numd,dend, Ta);
 sys_d = set(sys, 'variable', 'z^-1'); %Fun��o de Transfer�ncia em TD
 
-step(gs4)
-hold on
-step(ftz)
+% step(gs4)
+% hold on
+% step(ftz)
 
 %initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
 
@@ -71,3 +71,12 @@ ep = 0.7;                            %Epsilon (Coeficiente de amortecimento)
 wn = 4/(ep*Ts);
 Mp = exp((-ep*pi)/sqrt(1 - ep^2)); %Overshoot 
 Tao = (2*pi)/(25*wn*(1-2*ep^2)+sqrt(4*ep^4 -4*ep^2 + 2)); % Tempo de amostragem Ogata
+
+t= 0:.01:90;
+y = step(gs4,t);
+% step(gp);
+plot(t,y, 'LineWidth', 2)
+title('Resposta ao Degrau')
+xlabel('Tempo(s)')
+ylabel('Amplitude')
+% legend('y(t)')

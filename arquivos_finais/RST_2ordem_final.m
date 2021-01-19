@@ -44,5 +44,11 @@ w0 = 1;
 Tas = Ta;
 theta_switch_time = 10*Ta;
 
-step(gp)
-
+t= 0:.01:7;
+y = step(gp,t);
+% step(gp);
+plot(t,y, 'LineWidth', 2)
+title('Resposta ao Degrau')
+xlabel('Tempo(s)')
+ylabel('Amplitude')
+legend('y(t)')
