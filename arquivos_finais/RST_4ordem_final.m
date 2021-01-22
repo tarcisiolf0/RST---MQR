@@ -72,11 +72,20 @@ wn = 4/(ep*Ts);
 Mp = exp((-ep*pi)/sqrt(1 - ep^2)); %Overshoot 
 Tao = (2*pi)/(25*wn*(1-2*ep^2)+sqrt(4*ep^4 -4*ep^2 + 2)); % Tempo de amostragem Ogata
 
-t= 0:.01:90;
-y = step(gs4,t);
-% step(gp);
-plot(t,y, 'LineWidth', 2)
-title('Resposta ao Degrau')
-xlabel('Tempo(s)')
-ylabel('Amplitude')
+% t= 0:.01:90;
+% y = step(gs4,t);
+% plot(t,y, 'LineWidth', 2)
+% title('Resposta ao Degrau')
+% xlabel('Tempo(s)')
+% ylabel('Amplitude')
+% legend('y(t)')
+% figure 
+% 
+% % Malha fechada
+% sys = feedback(gs4,1);
+% y2 = step(sys,t);
+% plot(t,y2, 'LineWidth', 2)
+% title('Resposta ao Degrau')
+% xlabel('Tempo(s)')
+% ylabel('Amplitude')
 % legend('y(t)')
