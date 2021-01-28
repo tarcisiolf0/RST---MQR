@@ -47,7 +47,8 @@ sys_d = set(sys, 'variable', 'z^-1'); %Fun��o de Transfer�ncia em TD
 
 %initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
 
-initial_theta = [-0.200 0.0200 0.3000 0.1700 0.0200 0.3000 0.1000 -0.1200];
+% initial_theta = [-0.200 0.0200 0.3000 0.1700 0.0200 0.3000 0.1000 -0.1200];
+initial_theta = [-0.600 0.400 0.2000 0.1000 0.0900 0.2000 0.01000 -0.0120];
 w0 = 1/10;
 Tas = Ta;
 
