@@ -6,7 +6,7 @@ clear;
 % Fun��o de Transfer�nica Gs = X2(s)/F(s)
 syms s
 M1=1; M2=4;
-fv1=0.1; fv2=0.4; fv3=1;
+fv1=0.1; fv2=0.4; fv3=1; 
 K1=1; K2=1; K3=1;
 
 % delta = [((M1*s^2)+(fv1 + fv3)*s + (K1+K2)) -(fv3*s + K2);
@@ -34,8 +34,8 @@ gs4 = tf(num4, den4);
 % Ta = 5.92;
 % Ta = 3.94;
 
-Ta = 1.4992;
-
+% Ta = 1.4992;
+Ta = 0.1;
 ftz=c2d(gs4,Ta, 'zoh');          %Planta Discreta
 [numd,dend] = tfdata(ftz, 'v');         %num e den discreto
 sys = filt(numd,dend, Ta);
@@ -48,7 +48,7 @@ sys_d = set(sys, 'variable', 'z^-1'); %Fun��o de Transfer�ncia em TD
 %initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
 
 % initial_theta = [-0.200 0.0200 0.3000 0.1700 0.0200 0.3000 0.1000 -0.1200];
-initial_theta = [-0.600 0.400 0.2000 0.1000 0.0900 0.2000 0.01000 -0.0120];
+initial_theta = [-2.600 1.900 -0.1000 -0.2832 4e-05 1.75e-04 8.946e-05 1.613e-05];
 w0 = 1/10;
 Tas = Ta;
 
@@ -67,7 +67,7 @@ Ns = Nb +d -1;
 % Condi��es do polin�mio P(z^-1)
 % 0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
-Ts = 20;                     %Tempo de estabelecimento desejado malha fechada
+Ts = 10;                     %Tempo de estabelecimento desejado malha fechada
 ep = 0.7;                            %Epsilon (Coeficiente de amortecimento)
 wn = 4/(ep*Ts);
 Mp = exp((-ep*pi)/sqrt(1 - ep^2)); %Overshoot 

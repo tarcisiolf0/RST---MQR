@@ -39,7 +39,7 @@ ftzd= c2d(gpd,Ta, 'zoh');           %Planta Discreta
 sysd = filt(Bmd,Amd, Ta);
 tfd = set(sysd, 'variable', 'z^-1'); %Funcao de Transferencia em TD
 
-initial_theta = [-0.4 -0.4 0.005 0.10];
+initial_theta = [-0.4 -0.4 0.05 0.10];
 w0 = 1;
 Tas = Ta;
 theta_switch_time = 10*Ta;
