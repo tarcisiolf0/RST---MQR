@@ -39,7 +39,9 @@ ftzd= c2d(gpd,Ta, 'zoh');           %Planta Discreta
 sysd = filt(Bmd,Amd, Ta);
 tfd = set(sysd, 'variable', 'z^-1'); %Funcao de Transferencia em TD
 
-initial_theta = [-0.4 -0.4 0.05 0.10];
+% initial_theta = [-0.31 -0.55 0.0021 0.12];%Degrau
+% initial_theta = [-0.54 -0.33 0.0324 0.0840];%Rampa
+% initial_theta = [-0.33 -0.53 0.015 0.11];%Senoide
 w0 = 1;
 Tas = Ta;
 theta_switch_time = 10*Ta;
@@ -48,15 +50,19 @@ theta_switch_time = 10*Ta;
 % y = step(gp,t);
 % % step(gp);
 % plot(t,y, 'LineWidth', 2)
-% title('Resposta ao Degrau')
-% xlabel('Tempo(s)')
-% ylabel('Amplitude')
+% set(gca,'FontSize',15)
+% grid on
+% title('Resposta ao Degrau', 'FontSize', 30)
+% xlabel('Tempo(s)', 'FontSize', 25)
+% ylabel('Amplitude', 'FontSize', 25)
 % legend('y(t)')
 % figure
 % sys = feedback(gp,1);
 % y2 = step(sys,t);
-% plot(t,y, 'LineWidth', 2)
-% title('Resposta ao Degrau')
-% xlabel('Tempo(s)')
-% ylabel('Amplitude')
+% plot(t,y2, 'LineWidth', 2)
+% set(gca,'FontSize',15)
+% grid on
+% title('Resposta ao Degrau', 'FontSize', 30)
+% xlabel('Tempo(s)', 'FontSize', 25)
+% ylabel('Amplitude', 'FontSize', 25)
 % legend('y(t)')

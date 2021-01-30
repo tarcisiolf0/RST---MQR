@@ -35,7 +35,8 @@ gs4 = tf(num4, den4);
 % Ta = 3.94;
 
 % Ta = 1.4992;
-Ta = 0.1;
+Ta = 1;
+% Ta = 4.88;
 ftz=c2d(gs4,Ta, 'zoh');          %Planta Discreta
 [numd,dend] = tfdata(ftz, 'v');         %num e den discreto
 sys = filt(numd,dend, Ta);
@@ -47,8 +48,10 @@ sys_d = set(sys, 'variable', 'z^-1'); %Fun��o de Transfer�ncia em TD
 
 %initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
 
+initial_theta = [-1.8 1.58 -0.66 0.23 0.03 0.09 -0.01 -0.009];
 % initial_theta = [-0.200 0.0200 0.3000 0.1700 0.0200 0.3000 0.1000 -0.1200];
-initial_theta = [-2.600 1.900 -0.1000 -0.2832 4e-05 1.75e-04 8.946e-05 1.613e-05];
+% initial_theta = [-1.3 -0.02 0.07 0.2 -0.001 -6e-05 0.003 -7e-06];
+% initial_theta = [-0.45 0.14 0.45 0.07 0.1 0.27 0.9 -0.05];
 w0 = 1/10;
 Tas = Ta;
 
@@ -76,9 +79,11 @@ Tao = (2*pi)/(25*wn*(1-2*ep^2)+sqrt(4*ep^4 -4*ep^2 + 2)); % Tempo de amostragem 
 % t= 0:.01:90;
 % y = step(gs4,t);
 % plot(t,y, 'LineWidth', 2)
-% title('Resposta ao Degrau')
-% xlabel('Tempo(s)')
-% ylabel('Amplitude')
+% set(gca,'FontSize',15)
+% grid on
+% title('Resposta ao Degrau', 'FontSize', 30)
+% xlabel('Tempo(s)', 'FontSize', 25)
+% ylabel('Amplitude', 'FontSize', 25)
 % legend('y(t)')
 % figure 
 % 
@@ -86,7 +91,9 @@ Tao = (2*pi)/(25*wn*(1-2*ep^2)+sqrt(4*ep^4 -4*ep^2 + 2)); % Tempo de amostragem 
 % sys = feedback(gs4,1);
 % y2 = step(sys,t);
 % plot(t,y2, 'LineWidth', 2)
-% title('Resposta ao Degrau')
-% xlabel('Tempo(s)')
-% ylabel('Amplitude')
+% set(gca,'FontSize',15)
+% grid on
+% title('Resposta ao Degrau', 'FontSize', 30)
+% xlabel('Tempo(s)','FontSize', 25)
+% ylabel('Amplitude', 'FontSize', 25)
 % legend('y(t)')
