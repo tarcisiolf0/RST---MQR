@@ -46,23 +46,25 @@ w0 = 1;
 Tas = Ta;
 theta_switch_time = 10*Ta;
 
-% t= 0:.01:7;
-% y = step(gp,t);
-% % step(gp);
-% plot(t,y, 'LineWidth', 2)
-% set(gca,'FontSize',15)
-% grid on
-% title('Resposta ao Degrau', 'FontSize', 30)
-% xlabel('Tempo(s)', 'FontSize', 25)
-% ylabel('Amplitude', 'FontSize', 25)
-% legend('y(t)')
-% figure
-% sys = feedback(gp,1);
-% y2 = step(sys,t);
-% plot(t,y2, 'LineWidth', 2)
-% set(gca,'FontSize',15)
-% grid on
-% title('Resposta ao Degrau', 'FontSize', 30)
-% xlabel('Tempo(s)', 'FontSize', 25)
-% ylabel('Amplitude', 'FontSize', 25)
-% legend('y(t)')
+%% Plot
+close all
+t= 0:.01:7;
+y = step(gp,t);
+% step(gp);
+plot(t,y, 'LineWidth', 2)
+set(gca,'FontSize',15)
+grid on
+title('Resposta ao Degrau', 'FontSize', 30)
+xlabel('Tempo(s)', 'FontSize', 25)
+ylabel('Amplitude', 'FontSize', 25)
+legend('Saída do Sistema', 'FontSize', 20)
+figure
+sys = feedback(gp,1);
+y2 = step(sys,t);
+plot(t,y2, 'LineWidth', 2)
+set(gca,'FontSize',15)
+grid on
+title('Resposta ao Degrau', 'FontSize', 30)
+xlabel('Tempo(s)', 'FontSize', 25)
+ylabel('Amplitude', 'FontSize', 20)
+legend('Saída do Sistema','FontSize', 20)
