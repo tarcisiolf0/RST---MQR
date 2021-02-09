@@ -38,10 +38,10 @@ ftzd= c2d(gpd,Ta, 'zoh');           %Planta Discreta
 [Bmd, Amd] = tfdata(ftzd, 'v');
 sysd = filt(Bmd,Amd, Ta);
 tfd = set(sysd, 'variable', 'z^-1'); %Funcao de Transferencia em TD
-
+% 
 % initial_theta = [-0.31 -0.55 0.0021 0.12];%Degrau
 % initial_theta = [-0.54 -0.33 0.0324 0.0840];%Rampa
-% initial_theta = [-0.33 -0.53 0.015 0.11];%Senoide
+initial_theta = [-0.33 -0.53 0.015 0.11];%Senoide
 w0 = 1;
 Tas = Ta;
 theta_switch_time = 10*Ta;

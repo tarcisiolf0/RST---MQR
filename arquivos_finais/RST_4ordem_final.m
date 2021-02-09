@@ -48,7 +48,7 @@ sys_d = set(sys, 'variable', 'z^-1'); %Fun��o de Transfer�ncia em TD
 
 %initial_theta = [numd(2) numd(3) numd(4) numd(5) dend(2) dend(3) dend(4) dend(5)];
 
-initial_theta = [-1.8 1.58 -0.66 0.23 0.03 0.09 -0.01 -0.009];
+initial_theta = [-1.0 0.38 0.07 0.23 0.03 0.12 0.06 0.005];
 % initial_theta = [-0.200 0.0200 0.3000 0.1700 0.0200 0.3000 0.1000 -0.1200];
 % initial_theta = [-1.3 -0.02 0.07 0.2 -0.001 -6e-05 0.003 -7e-06];
 % initial_theta = [-0.45 0.14 0.45 0.07 0.1 0.27 0.9 -0.05];
@@ -70,7 +70,7 @@ Ns = Nb +d -1;
 % Condi��es do polin�mio P(z^-1)
 % 0.25 <= w0Ta <= 1.5 ; 0.7 <= zeta <= 1
 
-Ts = 10;                     %Tempo de estabelecimento desejado malha fechada
+Ts = 5;                     %Tempo de estabelecimento desejado malha fechada
 ep = 0.7;                            %Epsilon (Coeficiente de amortecimento)
 wn = 4/(ep*Ts);
 Mp = exp((-ep*pi)/sqrt(1 - ep^2)); %Overshoot 
