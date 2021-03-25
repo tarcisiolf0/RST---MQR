@@ -68,3 +68,20 @@ title('Resposta ao Degrau', 'FontSize', 30)
 xlabel('Tempo(s)', 'FontSize', 25)
 ylabel('Amplitude', 'FontSize', 20)
 legend('Saída do Sistema','FontSize', 20)
+figure
+%% Polos e Zeros
+close all
+pzmap(gp)
+set(gca,'FontSize',15)
+grid on
+title('Diagrama de Polos e Zeros', 'FontSize', 30)
+xlabel('Eixo Real', 'FontSize', 25)
+ylabel('Eixo Imaginário', 'FontSize', 25)
+figure
+%pzmap(sys_d)
+pzmap(ftz)
+set(gca,'FontSize',15)
+grid on
+title('Diagrama de Polos e Zeros', 'FontSize', 30)
+xlabel('Eixo Real', 'FontSize', 25)
+ylabel('Eixo Imaginário', 'FontSize', 25)
